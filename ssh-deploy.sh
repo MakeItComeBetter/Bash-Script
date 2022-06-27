@@ -9,16 +9,16 @@
 
 ssh -T host /bin/bash << EOF
 	ssh -T $1
-	cd hurricane_v1
+	cd root_folder
 	git branch
 	git stash
 	git fetch origin $2
 	git checkout $2 
 	git stash apply
-	sudo service unicorn_stgapi stop
+	sudo service unicorn stop
 	echo "Stopped server"
 	sleep 3
-	sudo service unicorn_stgapi start
+	sudo service unicorn start
 	echo "Server is running"
 
 	# cat tmp/pids/sidekiq.pid | xargs kill
