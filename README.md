@@ -1,1 +1,1 @@
-# Bash-Script
+# SSH Secure Shell
